@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-peliculas',
@@ -16,11 +16,16 @@ Ejemplo : Al producir un cambio, destruirlo, etc
 */
 
 //El OnInit es uno de los metodos del cilco de vida, 
-export class PeliculasComponent implements OnInit {
-
+export class PeliculasComponent implements OnInit, DoCheck {
+  
+  public titulo : string;
+  public booleano: boolean;
+  
   constructor() { 
     //Aca no deberia ir logica, solo asignar valores a las propiedades y precargar cosas necesarias
     console.log("Constructor lanzado");
+    this.titulo = "Nuevo titulo";
+    this.booleano = false;
   }
   
   //Hay que implementarlo aqui. 
@@ -30,7 +35,19 @@ export class PeliculasComponent implements OnInit {
     console.log("Evento OnInit lanzado");
     console.log("Componente iniciado");
   }
-
-
+  
   //Se lanza primero el construcor y luego el componente
+  
+  ngDoCheck(): void {
+    console.log("DoCheck Lanzado: Se ha producido algún cambio");
+  }
+
+    cambiarTitulo(){
+      this.titulo = "El titulo ha cambiado";
+    }
+  
+    toggleBoolean(){
+      this.booleano = !this.booleano;
+    }
+  
 }

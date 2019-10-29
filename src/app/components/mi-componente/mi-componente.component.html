@@ -2,7 +2,7 @@
 <h2>{{comentario}}</h2>
 <p>{{year}}</p>
 
-<button (click)="ocultarPeliculas()">Ocultar Películas</button>
+<button (click)="ocultarPeliculas()">{{lblMostrarPeliculas}}</button>
 
 <div *ngIf="mostrarPeliculas">
     <app-peliculas></app-peliculas>

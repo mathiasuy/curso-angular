@@ -9,6 +9,7 @@ export class MiComponente{
     
     private titulo : string;
     private comentario : string;
+    private lblMostrarPeliculas : string;
     private year : number;
     private mostrarPeliculas : boolean;
 
@@ -18,11 +19,13 @@ export class MiComponente{
         this.comentario = "Hola, soy el primer componente";
         this.year = 2010;
         this.mostrarPeliculas = true;
+        this.lblMostrarPeliculas = "Ocultar pelicluas";
         console.log(this.titulo,this.comentario,this.year);
     }
 
     ocultarPeliculas(){
         this.mostrarPeliculas = !this.mostrarPeliculas;
+        this.lblMostrarPeliculas = this.lblMostrarPeliculas=="Ocultar pelicluas"?"Mostrar pelicluas":"Ocultar pelicluas";
     }
 
 }

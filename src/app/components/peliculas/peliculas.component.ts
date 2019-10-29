@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-peliculas',
@@ -16,7 +16,7 @@ Ejemplo : Al producir un cambio, destruirlo, etc
 */
 
 //El OnInit es uno de los metodos del cilco de vida, 
-export class PeliculasComponent implements OnInit, DoCheck {
+export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   
   public titulo : string;
   public booleano: boolean;
@@ -49,5 +49,9 @@ export class PeliculasComponent implements OnInit, DoCheck {
     toggleBoolean(){
       this.booleano = !this.booleano;
     }
-  
+
+    ngOnDestroy(): void {
+      console.log("Se ha eliminado el componente " + this.titulo);
+    }    
+
 }

@@ -5,14 +5,18 @@ import { AppComponent } from './app.component';
 
 import { MiComponente } from './components/mi-componente/mi-componente.component';
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
-import { PruebasComponent } from './components/pruebas/pruebas.component'
+import { PruebasComponent } from './components/pruebas/pruebas.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SliderComponent } from './components/slider/slider.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MiComponente,
     PeliculasComponent,
-    PruebasComponent
+    PruebasComponent,
+    HeaderComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule
